@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find an Item | NeedIt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='need.css') }}">>
+</head>
+
+<body>
+
+    <h1>Find an Item</h1>
+    <p>Tell us what you need, and we will find a match!</p>
+
+    <form method="POST">
+
+        <label>Item Name</label>
+        <input type="text" name="item_name" placeholder="e.g. Calculator" required>
+
+        <br><br>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" min="1" required>
+
+        <br><br>
+
+        <label>Location</label>
+        <input type="text" name="location" placeholder="e.g. CSE Department" required>
+
+        <br><br>
+
+        <label>Required Duration</label>
+        <input type="text" name="duration" placeholder="e.g. 2 hours" required>
+
+        <br><br>
+
+        <label>Priority</label>
+        <select name="priority" required>
+            <option value="Normal">Normal</option>
+            <option value="Urgent">Urgent</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Find Items</button>
+
+    </form>
+
+</body>
+</html>

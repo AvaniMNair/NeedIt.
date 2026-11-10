@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Matches | NeedIt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='matches.css') }}">
+</head>
+
+<body>
+
+    <h1>Available Matches</h1>
+
+    {% if matches %}
+
+        {% for item in matches %}
+
+            <div class="match-card">
+
+                <h2>{{ item["item_name"] }}</h2>
+
+                <p>Quantity: {{ item["quantity"] }}</p>
+
+                <p>Location: {{ item["location"] }}</p>
+
+                <p>Owner: {{ item["owner"] }}</p>
+
+                <form method="POST" action="/borrow">
+
+                    <input type="hidden" name="owner" value="{{ item['owner'] }}">
+
+                    <input
+                        type="number"
+                        name="borrow_quantity"
+                        min="1"
+                        max="{{ item['quantity'] }}"
+                        placeholder="Quantity to borrow"
+                        required
+                    >
+
+                    <button type="submit">Borrow Now</button>
+
+                </form>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No matching items found.</p>
+
+    {% endif %}
+
+</body>
+</html>

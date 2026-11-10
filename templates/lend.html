@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lend an Item | NeedIt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lend.css') }}">
+</head>
+
+<body>
+    <h1>Lend an Item</h1>
+    <p>Share something you have with another student!</p>
+    <form method="POST">
+
+        <label>Item Name</label>
+        <input type="text" name="item_name" placeholder="e.g. Calculator" required>
+
+        <br><br>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" min="1" required>
+
+        <br><br>
+
+        <label>Location</label>
+        <input type="text" name="location" placeholder="e.g. CSE Department" required>
+
+        <br><br>
+
+        <label>Availability</label>
+        <select name="availability" required>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+
+        <br><br>
+
+        <label>Owner Name</label>
+        <input type="text" name="owner" placeholder="Your name" required>
+
+        <br><br>
+
+        <button type="submit">List Item</button>
+
+    </form>
+
+</body>
+</html>

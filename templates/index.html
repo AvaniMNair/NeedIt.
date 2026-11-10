@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+</head>
+
+<body>
+  <header class='Navbar'>
+    <h1 class='title'>NeedIt.</h1>
+    <nav class="nav-link">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <h1>Find What you Need. Lend WHat you have. </h1>  
+  <h2>A smarter way for college students to share useful items.</h2>
+  <p>Find an item</p>
+  <p >Lend an item</p>
+  <h3>What would you like to do?</h3>
+  <div class='cards'>
+    <div class='need'>
+      <a href="/need"><button>I need something</button></a>
+      <p>Search for items available to borrow.</p>
+    </div>
+    <div class='lend'>
+      <a href="/lend"><button>I have something</button></a>
+      
+      <p>List items you're willing to lend.</p>
+    </div>
+  </div>
+</body>
+</html>
